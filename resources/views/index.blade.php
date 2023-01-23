@@ -3,15 +3,22 @@
 @section('content')
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
+            @foreach ($movies as $movie)
+                <div class="col">
+
+                    <div class="card bg-dark">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">{{$movie->title}}</h5>
+                            <p class="card-text">{{$movie->original_title}}</p>
+
+                            <p class="card-text">{{$movie->nationality}}</p>
+                            <p class="card-text">{{$movie->date}}</p>
+                            <p class="card-text">{{$movie->vote}}</p>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-    </div>
-@endsection
+            @endforeach
+
+        </div>
+    @endsection
